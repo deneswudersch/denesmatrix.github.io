@@ -3,96 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RÓLAM // shadowlog</title>
+<title>RÓLAM // moonlight drive</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Audiowide&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Courier New', monospace;
-  background: #050508;
-  color: #b8c8d8;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: #12081f;
+  color: #e8d8f8;
   line-height: 1.7;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: repeating-linear-gradient(0deg,
-    transparent 0px, transparent 2px,
-    rgba(0, 255, 255, 0.02) 3px);
-  pointer-events: none;
-  z-index: 999;
+  min-height: 100vh;
 }
 header {
-  background: linear-gradient(180deg, #0a0a12 0%, #12061a 100%);
-  border-bottom: 2px solid #ff2ec4;
-  padding: 50px 20px;
+  position: relative;
+  padding: 90px 20px 0;
   text-align: center;
-  box-shadow: 0 0 40px rgba(255, 46, 196, 0.25) inset;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0d0618 0%, #2b1055 35%, #7b1f6a 65%, #ff5f8f 100%);
+}
+header::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 46%;
+  transform: translateX(-50%);
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffe29a 0%, #ff8c5a 45%, #ff2e88 100%);
+  box-shadow: 0 0 80px 20px rgba(255, 46, 136, 0.6);
+  z-index: 0;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 46%;
+  transform: translateX(-50%);
+  width: 224px; height: 224px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(0deg,
+    transparent 0px, transparent 14px,
+    #2b1055 14px, #2b1055 22px);
+  clip-path: inset(55% 0 0 0);
+  z-index: 1;
+}
+.mandala {
+  position: relative;
+  z-index: 3;
+  font-size: 1.6em;
+  display: block;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff2e88;
 }
 .glitch-tag {
-  font-size: 0.8em;
-  color: #00ffd5;
-  letter-spacing: 4px;
+  position: relative;
+  z-index: 3;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75em;
+  color: #00eaff;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 12px #00eaff;
 }
-.glitch-tag::before { content: "[ "; color: #ff2ec4; }
-.glitch-tag::after { content: " ]"; color: #ff2ec4; }
 h1 {
-  font-size: 2.2em;
-  color: #00ffd5;
-  text-shadow: 0 0 10px #00ffd5, 3px 3px 0 #ff2ec4;
+  position: relative;
+  z-index: 3;
+  font-family: 'Audiowide', cursive;
+  font-size: 2.4em;
   letter-spacing: 3px;
   text-transform: uppercase;
+  background: linear-gradient(180deg, #fff 0%, #cfefff 45%, #7fe3ff 50%, #ff9ad5 55%, #ff2e88 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(255, 46, 136, 0.8)) drop-shadow(0 3px 0 rgba(0, 234, 255, 0.4));
 }
-.motto { color: #ff2ec4; font-style: italic; margin-top: 12px; text-shadow: 0 0 8px rgba(255,46,196,0.5); }
-.mandala {
-  font-size: 1.6em; display: block; margin-bottom: 10px;
-  text-shadow: 0 0 12px #ff2ec4;
-  animation: flicker 3s infinite;
+.motto {
+  position: relative;
+  z-index: 3;
+  color: #ffe9f5;
+  font-style: italic;
+  margin: 14px auto 60px;
+  max-width: 560px;
+  text-shadow: 0 0 10px rgba(255, 46, 136, 0.7);
 }
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  92% { opacity: 1; }
-  93% { opacity: 0.4; }
-  94% { opacity: 1; }
-  97% { opacity: 0.6; }
-  98% { opacity: 1; }
+.grid {
+  position: relative;
+  z-index: 2;
+  height: 130px;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,234,255,0.35) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(90deg, rgba(0,234,255,0.35) 0 2px, transparent 2px 40px);
+  transform: perspective(220px) rotateX(55deg) scale(2.6);
+  transform-origin: top center;
+  box-shadow: 0 -1px 0 #00eaff;
 }
-nav { background: #0a0a12; text-align: center; padding: 15px; border-bottom: 1px solid #2a2a4a; }
+nav {
+  background: #170a2b;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid #ff2e88;
+  box-shadow: 0 0 25px rgba(255, 46, 136, 0.35);
+}
 nav a {
-  color: #00ffd5; text-decoration: none; margin: 0 18px; font-weight: bold;
-  text-transform: uppercase; letter-spacing: 2px; font-size: 0.9em;
-  text-shadow: 0 0 6px rgba(0,255,213,0.6);
+  font-family: 'Orbitron', sans-serif;
+  color: #00eaff;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85em;
+  text-shadow: 0 0 8px #00eaff;
 }
-nav a::before { content: "> "; color: #ff2ec4; }
-nav a:hover { color: #ff2ec4; text-shadow: 0 0 10px #ff2ec4; }
+nav a:hover { color: #ff5f8f; text-shadow: 0 0 12px #ff2e88; }
 main { max-width: 780px; margin: 0 auto; padding: 25px 15px; }
 .post {
-  background: #0c0c16;
-  border: 1px solid #2a2a4a;
-  border-left: 5px solid #00ffd5;
-  border-radius: 4px;
+  background: rgba(23, 10, 43, 0.85);
+  border: 1px solid #ff2e88;
+  border-radius: 10px;
   padding: 25px;
   margin: 30px 0;
-  box-shadow: 0 0 25px rgba(0, 255, 213, 0.07);
+  box-shadow: 0 0 30px rgba(255, 46, 136, 0.2), 0 0 60px rgba(0, 234, 255, 0.08);
 }
 .post h2 {
-  color: #00ffd5; margin-bottom: 5px;
-  text-shadow: 0 0 8px rgba(0,255,213,0.5);
-  text-transform: uppercase; letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00eaff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px #00eaff;
+  letter-spacing: 2px;
 }
-.post h2::before { content: "// "; color: #ff2ec4; text-shadow: none; }
-strong { color: #e8d8f0; }
-.stat { color: #5a6a8a; font-size: 0.85em; letter-spacing: 1px; }
-.stat::before { content: ">> "; color: #ff2ec.stat::before { content: ">> "; color: #ff2ec4; text-shadow: none; }
+.datum {
+  font-family: 'Orbitron', sans-serif;
+  color: #ff9ad5;
+  font-size: 0.75em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+strong { color: #ffd1ec; }
 footer {
   text-align: center;
   padding: 30px;
-  color: #4a5a7a;
-  border-top: 1px solid #2a2a4a;
+  color: #b88fd4;
+  border-top: 1px solid #ff2e88;
   font-size: 0.8em;
   letter-spacing: 2px;
+  background: linear-gradient(180deg, transparent, rgba(255,46,136,0.08));
 }
 @media (max-width: 600px) {
   h1 { font-size: 1.4em; }
@@ -103,10 +159,11 @@ footer {
 </head>
 <body>
 <header>
-  <span class="mandala">ॐ ⚡🐉⚡ ॐ</span>
-  <div class="glitch-tag">Shadowlog // Runner-Profil Betöltve</div>
+  <span class="mandala">🌙 🐉 🌙</span>
+  <div class="glitch-tag">Runner Dosszié // Azonosítás megerősítve</div>
   <h1>Napló: nulláról Pythonig</h1>
-  <p class="motto">Neon riffek, színes mesék és tanuló kód – decker képzés, lépésről lépésre</p>
+  <p class="motto">Synthwave riffek, színes mesék és tanuló kód – éjfélkor indul a tanulás, és sosem áll meg</p>
+  <div class="grid"></div>
 </header>
 <nav>
     <a href="index.html">Főoldal</a>
@@ -115,8 +172,8 @@ footer {
 </nav>
 <main>
 <div class="post">
-<h2>Rólam – A Runner Dosszié</h2>
-<p class="stat">alias: decker · age: 50 · class: novícius kódvarázsló</p>
+<h2>★ Rólam – A Runner Dosszié</h2>
+<p class="datum">// alias: midnight dragon · age: 50 · class: novícius kódvarázsló</p>
 <p><strong>Ötven éves lettem</strong> – és számomra is meglepetés ez a képzés. 😄</p>
 <p>A technológiával azonban nem ez az első találkozásom: anno <strong>2001-ben</strong> még
 <strong>Visual Basic nyelvből</strong> vizsgáztam, és a vizsgamunkámat is abban írtam.
@@ -127,13 +184,13 @@ a nyelvek változtak – de a logika, az a szerencsére megmaradt.
 Egy <strong>sárkány sosem felejti el a repülést</strong>, csak újra kell éreznie a szárnyait.</p>
 </div>
 <div class="post">
-<h2>„Nulláról indulok – de a nulla mögött már ott a tapasztalat."</h2>
+<h2>★ „Nulláról indulok – de a nulla mögött már ott a tapasztalat."</h2>
 </div>
 </main>
 <footer>
-  ॐ SHADOWLOG // NULLÁRÓL PYTHONIG ॐ<br>
-  <span class="warn">⚠ Készült nagy metállal, neonfényben és nepáli ihletettel ⚠</span><br>
-  // connection terminated //
+  🌙 NAPLÓ: NULLÁRÓL PYTHONIG 🌙<br>
+  Készült nagy metállal, neonfényben és nepáli ihletettel<br>
+  // moonlight rendezvous // tonight we ride //
 </footer>
 </body>
 </html>
