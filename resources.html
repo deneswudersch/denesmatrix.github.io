@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORRÁSOK // shadowlog</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Courier New', monospace;
+  background: #050508;
+  color: #b8c8d8;
+  line-height: 1.7;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(0deg,
+    transparent 0px, transparent 2px,
+    rgba(0, 255, 255, 0.02) 3px);
+  pointer-events: none;
+  z-index: 999;
+}
+header {
+  background: linear-gradient(180deg, #0a0a12 0%, #12061a 100%);
+  border-bottom: 2px solid #ff2ec4;
+  padding: 50px 20px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 46, 196, 0.25) inset;
+}
+.glitch-tag {
+  font-size: 0.8em;
+  color: #00ffd5;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.glitch-tag::before { content: "[ "; color: #ff2ec4; }
+.glitch-tag::after { content: " ]"; color: #ff2ec4; }
+h1 {
+  font-size: 2.2em;
+  color: #00ffd5;
+  text-shadow: 0 0 10px #00ffd5, 3px 3px 0 #ff2ec4;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.motto { color: #ff2ec4; font-style: italic; margin-top: 12px; text-shadow: 0 0 8px rgba(255,46,196,0.5); }
+.mandala {
+  font-size: 1.6em; display: block; margin-bottom: 10px;
+  text-shadow: 0 0 12px #ff2ec4;
+  animation: flicker 3s infinite;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.4; }
+  94% { opacity: 1; }
+  97% { opacity: 0.6; }
+  98% { opacity: 1; }
+}
+nav { background: #0a0a12; text-align: center; padding: 15px; border-bottom: 1px solid #2a2a4a; }
+nav a {
+  color: #00ffd5; text-decoration: none; margin: 0 18px; font-weight: bold;
+  text-transform: uppercase; letter-spacing: 2px; font-size: 0.9em;
+  text-shadow: 0 0 6px rgba(0,255,213,0.6);
+}
+nav a::before { content: "> "; color: #ff2ec4; }
+nav a:hover { color: #ff2ec4; text-shadow: 0 0 10px #ff2ec4; }
+main { max-width: 780px; margin: 0 auto; padding: 25px 15px; }
+.post {
+  background: #0c0c16;
+  border: 1px solid #2a2a4a;
+  border-left: 5px solid #00ffd5;
+  border-radius: 4px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 0 25px rgba(0, 255, 213, 0.07);
+}
+.post h2 {
+  color: #00ffd5; margin-bottom: 5px;
+  text-shadow: 0 0 8px rgba(0,255,213,0.5);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.post h2::before { content: "// "; color: #ff2ec4; text-shadow: none; }
+.datum {
+  color: #5a6a8a;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.datum::before { content: "[ SYS.LOG: "; color: #ff2ec4; }
+.datum::after { content: " ]"; color: #ff2ec4; }
+ul { padding-left: 20px; margin: 10px 0; }
+li { margin: 6px 0; }
+strong { color: #e8d8f0; }
+.done { color: #7ee787; text-shadow: 0 0 6px rgba(126,231,135,0.4); }
+.wip { color: #ff8c1a; text-shadow: 0 0 6px rgba(255,140,26,0.4); }
+.locked { color: #5a6a8a; }
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #4a5a7a;
+  border-top: 1px solid #2a2a4a;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 1.4em; }
+  nav a { display: inline-block; margin: 5px 10px; }
+  .post { padding: 18px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <span class="mandala">ॐ ⚡🐉⚡ ॐ</span>
+  <div class="glitch-tag">Shadowlog // Tudás-Arszenál Hozzáférhető</div>
+  <h1>Napló: nulláról Pythonig</h1>
+  <p class="motto">Neon riffek, színes mesék és tanuló kód – decker képzés, lépésről lépésre</p>
+</header>
+<nav>
+    <a href="index.html">Főoldal</a>
+    <a href="about.html">Rólam</a>
+    <a href="resources.html">Források</a>
+</nav>
+<main>
+<div class="post">
+<h2>Coursera – Teljesített Küldetések</h2>
+<p class="datum">5 küldetés · 100% teljesítve</p>
+<ul>
+<li><strong>Data Analysis and Visualization with Python</strong> – Microsoft</li>
+<li><strong>Python Programming Fundamentals</strong> – Microsoft</li>
+<li><strong>Python Data Structures</strong> – University of Michigan</li>
+<li><strong>Programming for Everybody (Getting Started with Python)</strong> – University of Michigan</li>
+<li><strong>Introduction to Python Programming</strong> – University of Pennsylvania</li>
+</ul>
+</div>
+<div class="post">
+<h2>Microsoft Python Development – Aktív Kampány</h2>
+<p class="datum">Folyamatban · 6 részes küldetéslánc</p>
+<ul>
+<li class="done">✅ Python Programming Fundamentals – TELJESÍTVE</li>
+<li class="done">✅ Data Analysis and Visualization with Python – TELJESÍTVE</li>
+<li class="wip">🔥 Automation and Scripting with Python – 42% (aktív futás)</li>
+<li class="locked">⬜ Web Development with Python – ZÁROLT</li>
+<li class="locked">⬜ Advanced Python Development Techniques – ZÁROLT</li>
+<li class="locked">⬜ Project Development in Python – ZÁROLT</li>
+</ul>
+</div>
+</main>
+<footer>
+  ॐ SHADOWLOG // NULLÁRÓL PYTHONIG ॐ<br>
+  <span class="warn">⚠ Készült nagy metállal, neonfényben és nepáli ihletettel ⚠</span><br>
+  // connection terminated //
+</footer>
+</body>
+</html>
